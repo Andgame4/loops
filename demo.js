@@ -69,12 +69,34 @@
 
 // c2 : sử dụng tempalte string
 
-let result2 = "";
-for (let i = 1; i <= 9; i++) {
-  result2 += "<tr>";
-  for (let j = 2; j <= 9; j++) {
-    result2 += `<td> ${j}  x ${i} = ${j * i} </td>`;
+// let result2 = "";
+// for (let i = 1; i <= 9; i++) {
+//   result2 += "<tr>";
+//   for (let j = 2; j <= 9; j++) {
+//     result2 += `<td> ${j}  x ${i} = ${j * i} </td>`;
+//   }
+//   result2 += "</tr>";
+// }
+// document.getElementById("tableDemo").innerHTML = result2;
+
+// Số nguyên tô
+var number1 = parseInt(prompt("Nhap so luong can in ra:"));
+for (var i = 0; i <= number1; i++) {
+  if (test_prime(i)) {
+    document.write(i + " ");
   }
-  result2 += "</tr>";
 }
-document.getElementById("tableDemo").innerHTML = result2;
+function test_prime(n) {
+  if (n <= 1) {
+    return false;
+  } else if (n === 2) {
+    return true;
+  } else {
+    for (var x = 2; x < n; x++) {
+      if (n % x === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+}
